@@ -23,10 +23,22 @@ var phnNumChk = function(phoneNumber){
 //Function to check whether string is an e-mail or not.
 var emailChk = function(emailAddress){
 	var isEmail = true;
-	if (emailAddress.contains("@" && ".com")){
+	if (emailAddress.contains("@" && emailAddress.endsWith(".com"))){
 		return isEmail;
 	} else {
 		var isEmail = false;
 		return isEmail;
 	}
 };
+
+//Function to check whether string is a URL or not.
+var urlChk = function(url){
+	var isUrl = true;
+	if (url.startsWith("http://") || url.startsWith("https://")){
+		return isUrl;
+	} else {
+		isUrl = false;
+		return isUrl;
+	}
+};
+
