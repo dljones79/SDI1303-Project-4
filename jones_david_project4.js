@@ -29,7 +29,7 @@ var emailChk = function(emailAddress){
 		var isEmail = false;
 		return isEmail;
 	}
-};
+}; // End of emailChk Function
 
 //Function to check whether string is a URL or not.
 var urlChk = function(url){
@@ -40,5 +40,26 @@ var urlChk = function(url){
 		isUrl = false;
 		return isUrl;
 	}
+}; // End of urlChk Function
+
+//Function to title-case a string (split into words, uppercase first letter of each word)
+var titleCase = function(stringToCase){
+	seperator = " ";
+	var arrayOfStrings = stringToCase.split(seperator);
+	
+	for (var i = 0; i < arrayOfStrings.length; i++) {
+		arrayOfStrings[i] = arrayOfStrings[i].substr(0,1).toUpperCase() +
+			(arrayOfStrings[i].length > 1 ? arrayOfStrings[i].substr(1).toLowerCase() : "")
+	}
+	return arrayOfStrings.join(" ");
+}; // End of titleCase Function
+
+//Function to replace seperators within a string with other seperators
+
+var changeSep = function(givenString, initSep, newSep){
+	var newStr = givenString.replace(initSep, newSep, "gi");
+	return newStr;
 };
 
+var test = changeSep("a/b/c", "/", ",");
+console.log(test);
