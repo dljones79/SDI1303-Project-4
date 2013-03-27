@@ -112,11 +112,9 @@ var numLib = function (){
 			(day)));
 		
 		if (format === "days"){
-			console.log("days selected.");
 			return calcTime;
 		} else if (format === "hours") {
 			hours = calcTime * 24;
-			console.log("hours selected.");
 			return hours;
 		} else {
 			console.log("Wrong format.");
@@ -136,4 +134,53 @@ var numLib = function (){
 	}; //End return
 }; //End Num Library
 
+/////////////////////
+// Array Functions //
+/////////////////////
 
+//var arrayLib = function () {
+	
+	//Function to find smallest value in array that is greater than given number added to array.
+	var smallVal = function(array, num) {
+		var smallest = 0;
+		array.sort(function(a,b){return a-b;});
+		
+		if (num > array[0] && num < array[array.length-1]) {
+			array.push(num);
+			array.sort(function(a,b){return a-b;});
+			smallest = array[array.indexOf(num) + 1];
+			return smallest;
+		} else {
+			return null;
+			console.log("Out of range.");
+		}; //End of if/else
+	}; // End of smallVal Function
+	
+
+	//Function to find total value of all numbers in an array.
+	var sumNums = function(array){
+		var sum = 0;
+		for (var i = 0; i < array.length; i++){
+			if (array[i] * 1 === array[i]){
+				sum += array[i];
+			};// End of if
+		};//End of for
+		return sum;
+	}; //End of sumNums
+	
+	//Function to sort an array of objects by given key value
+	var sortArrayByKey = function(array,key){
+		sortedArray = array;
+		sortedArray.sort(function(a,b){
+			return a[key] - b[key];
+		});
+		return sortedArray;
+	}; //End of sortArrayByKey Function 
+	
+	return {
+		"smallVal" : smallVal,
+		"sumNums" : sumNums,
+		"sortArrayByKey" : sortArrayByKey
+	}; //End return 
+			
+}; //End of Array Library
