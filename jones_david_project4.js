@@ -27,8 +27,8 @@ var strLib = function () {
 	
 	//Function to check whether string is an e-mail or not.
 	var emailChk = function(emailAddress){
-		var isEmail = true;
-		if (emailAddress.contains("@" && emailAddress.endsWith(".com"))){
+		var isEmail = true;										//Project 2: Scope (var keyword)
+		if (emailAddress.contains("@") && emailAddress.endsWith(".com")){
 			return isEmail;
 		} else {
 			var isEmail = false;
@@ -138,7 +138,7 @@ var numLib = function (){
 // Array Functions //
 /////////////////////
 
-//var arrayLib = function () {
+var arrayLib = function () {
 	
 	//Function to find smallest value in array that is greater than given number added to array.
 	var smallVal = function(array, num) {
@@ -184,3 +184,41 @@ var numLib = function (){
 	}; //End return 
 			
 }; //End of Array Library
+
+/////////////
+//Main Code//
+/////////////
+
+//Testing String Function Library
+var stringLibrary = strLib();
+console.log("Beginning string function tests.");
+console.log(stringLibrary.phnNumChk("501-882-3810"));        //Project 2: Technical/Returns
+console.log(stringLibrary.emailChk("dljones79@gmail.com"));
+console.log(stringLibrary.urlChk("http://www.epikfoto.com"));
+console.log(stringLibrary.titleCase("This is the string I want to manipulate."));
+console.log(stringLibrary.changeSep("a,b,c,d", ",", "/"));
+console.log("End of string function tests.");
+//End of string function tests.
+
+//Testing Number Function Library
+var numberLib = numLib();
+console.log("Beginning \"Number Function\" tests.");		//Project 1: String with escapes
+console.log(numberLib.decimalPlace(7.124312, 2));
+console.log(numberLib.compNums(25, 12, 15));
+console.log(numberLib.timeBtwDates("2012,1,20","2013,4,1","days"));
+console.log(numberLib.numFromStr("2145"));
+console.log("End of number function tests.");
+//End of number function tests.
+
+//Testing Array Function Library
+var arrLib = arrayLib();
+var array1 = [{a:2},{a:1},{a:4},{a:3}];
+console.log("Beginning array function tests.");
+console.log(arrLib.smallVal([12,34,13,45,17,20,7,10],22));
+console.log(arrLib.sumNums([14,10,"a",17,1,"114"]));
+console.log(arrLib.sortArrayByKey(array1,"a"));
+console.log("End of array function tests.");
+//End of array function tests.
+
+//Project 1: Indentation and line spacing (Techincal/Syntax)
+
