@@ -17,7 +17,7 @@ var strLib = function () {
 		
 		if (phoneNumber.length === 12 && phoneNumber[3] === "-" && 
 			phoneNumber[7] === "-" && numChk === false) {
-				return isPhnNum;								//Project 2: Boolean Output
+				return isPhnNum;								//MAKEUP: boolean output, project 3
 			} else {
 				isPhnNum = false;
 				return isPhnNum;
@@ -27,7 +27,7 @@ var strLib = function () {
 	
 	//Function to check whether string is an e-mail or not.
 	var emailChk = function(emailAddress){
-		var isEmail = true;										//Project 2: Scope (var keyword)
+		var isEmail = true;										//MAKEUP: Scope, project 2
 		if (emailAddress.contains("@") && emailAddress.endsWith(".com")){
 			return isEmail;
 		} else {
@@ -192,7 +192,7 @@ var arrayLib = function () {
 //Testing String Function Library
 var stringLibrary = strLib();
 console.log("Beginning string function tests.");
-console.log(stringLibrary.phnNumChk("501-882-3810"));        //Project 2: Technical/Returns
+console.log(stringLibrary.phnNumChk("501-882-3810"));        //MAKEUP: Technical/Returns, project 2
 console.log(stringLibrary.emailChk("dljones79@gmail.com"));
 console.log(stringLibrary.urlChk("http://www.epikfoto.com"));
 console.log(stringLibrary.titleCase("This is the string I want to manipulate."));
@@ -202,7 +202,7 @@ console.log("End of string function tests.");
 
 //Testing Number Function Library
 var numberLib = numLib();
-console.log("Beginning \"Number Function\" tests.");		//Project 1: String with escapes
+console.log("Beginning \"Number Function\" tests.");		//MAKEUP: String with escapes, proj. 1
 console.log(numberLib.decimalPlace(7.124312, 2));
 console.log(numberLib.compNums(25, 12, 15));
 console.log(numberLib.timeBtwDates("2012,1,20","2013,4,1","days"));
@@ -220,5 +220,5 @@ console.log(arrLib.sortArrayByKey(array1,"a"));
 console.log("End of array function tests.");
 //End of array function tests.
 
-//Project 1: Indentation and line spacing (Techincal/Syntax)
+//MAKEUP: Indentation and line spacing (Techincal/Syntax), Project 1
 
